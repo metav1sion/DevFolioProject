@@ -1,0 +1,22 @@
+﻿@model DevFolio.Models.TblAbout
+@{
+    ViewBag.Title = "UpdateAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Hakkımda Yazısı Güncelleme</h2>
+
+<form method="post">
+    
+    <label>ID</label>
+    <input type="text" class="form-control" name="AboutID" value="@Model.AboutID" readonly/>
+
+    <label>Başlık</label>
+    <input type="text" class="form-control" name="AboutTitle" value="@Model.AboutTitle"/>
+
+    <label>Açıklama Yazısı</label>
+    <textarea rows="5" class="form-control" name="Description">@Model.Description</textarea>
+    <br/>
+    <button class="btn btn-info">Hakkımda Yazısını Güncelle</button>
+</form>
+

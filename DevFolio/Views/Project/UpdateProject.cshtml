@@ -1,0 +1,39 @@
+﻿@model DevFolio.Models.TblProject
+
+@{
+    ViewBag.Title = "UpdateProject";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Proje Güncelleme</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <label>Proje ID</label>
+    <input type="text" class="form-control" name="ProjectId" value="@Model.ProjectID" readonly="" />
+    <br />
+
+    <label>Proje Başlığı</label>
+    <input type="text" class="form-control" name="ProjectTitle" value="@Model.ProjectTitle" />
+    <br />
+
+    <label>Mevcut Görsel</label>
+    <br />
+    <img style="width: 30%; height: 30%;" src="@Model.CoverImageUrl" alt="@Model.ProjectTitle" class="img-thumbnail">
+    <br />
+
+    <label for="formFileMultiple" class="form-label">Proje İle Alakalı Fotoğraf</label>
+    <input class="form-control mb-3" type="file" name="file" id="formFileMultiple">
+
+    <label>Projenin Kategorisi</label>
+
+    @Html.DropDownListFor(m => m.TblCategory.CategoryID, (List<SelectListItem>)ViewBag.data, new { @class = "form-control" })
+
+    <label>Projenin Açıklaması</label>
+    <textarea rows="5" class="form-control" name="ProjectDescription">@Model.ProjectDescription</textarea>
+
+
+
+    <button class="btn btn-warning mt-3">Yeteneği Güncelle</button>
+</form>
+
+

@@ -1,0 +1,38 @@
+﻿@model List<DevFolio.Models.TblCategory>
+
+@{
+    ViewBag.Title = "CreateProject";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Yeni Proje Oluşturma Sayfası</h2>
+
+<label>Proje Başlığı</label>
+<form method="post" enctype="multipart/form-data">
+    <input type="text" class="form-control" name="ProjectTitle" />
+    <br />
+    <label>Proje Kategorisi</label>
+    <br />
+
+    @*<input type="text" class="form-control" name="ProjectCategory"/>*@
+    <select class="custom-select" name="ProjectCategory">
+        <option selected>Projenizin Kategorisini Seçiniz</option>
+        @foreach (var item in Model)
+        {
+            <option value="@item.CategoryID">@item.CategoryName</option>
+        }
+    </select>
+    <br/>
+    <br />
+    
+    <div class="mb-3">
+        <label for="formFileMultiple" class="form-label">Proje İle Alakalı Fotoğraf</label>
+        <input class="form-control" type="file" name="file" id="formFileMultiple">
+    </div>
+
+    <label>Proje Açıklaması</label>
+    <textarea rows="5" class="form-control" name="ProjectDescription"></textarea>
+    <br />
+    <button class="btn btn-info">Projeyi Kaydet</button>
+</form>
+
