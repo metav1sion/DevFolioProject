@@ -1,0 +1,19 @@
+﻿@model DevFolio.Models.TblContact
+@{
+    ViewBag.Title = "ReadMessage";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<label>Mail</label>
+@Html.TextBoxFor(model => model.Email, new { @class = "form form-control", @readonly="readonly" })
+<br/>
+<label>İsim Soyisim</label>
+@Html.TextBoxFor(Model => Model.NameSurname, new { @class = "form form-control", @readonly = "readonly" })
+<br />
+<label>Mesaj Tarihi</label>
+@Html.TextBoxFor(Model => Model.SendMessageDate, new { @class = "form form-control", @readonly = "readonly" })
+<br />
+<label>Mesaj</label>
+@Html.TextAreaFor(Model => Model.Message, new { @class = "form form-control", @readonly = "readonly", rows="18" })
+
+

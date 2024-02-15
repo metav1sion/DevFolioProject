@@ -1,0 +1,15 @@
+﻿@model DevFolio.Models.TblCategory
+@{
+    ViewBag.Title = "CreateCategory";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Kategori Ekleme Sayfası</h2>
+
+@using (Html.BeginForm("CreateCategory", "Category", FormMethod.Post))
+{
+    <label>Kategori İsmi</label>
+    @Html.TextBoxFor(Model => Model.CategoryName, new { @class = "form-control" });
+    <br />
+    <button class="btn btn-info">Ekle</button>
+}

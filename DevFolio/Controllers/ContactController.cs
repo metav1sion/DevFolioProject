@@ -3,26 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DevFolio.Models;
 
 namespace DevFolio.Controllers
 {
     public class ContactController : Controller
     {
         // GET: Contact
-        public ActionResult Index()
+        private DbDevFolioEntities db = new DbDevFolioEntities();
+
+        
+		public ActionResult MessageList()
         {
-            return View();
+	        var values = db.TblContact.ToList();
+            return View(values);
         }
 
-        public ActionResult SendMessage()
-        {
 
-            return View();
-        }
-
-        public ActionResult MessageList() 
+		public ActionResult ReadMessage(int id)
         {
-            return View();
+            var value = db.TblContact.FirstOrDefault(x=>x.ContactID==id);
+            value.IsRead = true;
+            db.SaveChanges();
+            return View(value);
         }
     }
 }
