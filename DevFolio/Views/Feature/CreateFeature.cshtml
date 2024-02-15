@@ -1,0 +1,18 @@
+﻿@model DevFolio.Models.TblFeature
+@{
+    ViewBag.Title = "CreateFeature";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Giriş Sayfası Bilgileri Oluştur</h2>
+
+<form method="post">
+    <label>Başlık</label>
+    @Html.TextBoxFor(Model => Model.HeaderTitle, new { @class = "form-control" })
+    <br />
+    <label>Özellikler</label>
+    @Html.TextBoxFor(Model => Model.HeaderDescription, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Ekle</button>
+</form>
+

@@ -509,11 +509,13 @@
     <Content Include="Views\Default\PartialAdress.cshtml" />
     <Content Include="Views\Default\PartialSocial.cshtml" />
     <Content Include="Views\Default\PartialContact.cshtml" />
+    <Content Include="Views\Feature\FeatureList.cshtml" />
+    <Content Include="Views\Feature\UpdateFeature.cshtml" />
+    <Content Include="Views\Feature\CreateFeature.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Adress\" />
-    <Folder Include="Views\Feature\" />
     <Folder Include="Views\Profile\" />
   </ItemGroup>
   <ItemGroup>
