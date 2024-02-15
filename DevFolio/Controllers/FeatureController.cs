@@ -9,7 +9,7 @@ namespace DevFolio.Controllers
     public class FeatureController : Controller
     {
         // GET: Feature
-        public ActionResult Index()
+        public ActionResult Idex()
         {
             return View();
         }
