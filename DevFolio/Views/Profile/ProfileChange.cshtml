@@ -1,0 +1,46 @@
+﻿@model DevFolio.Models.TblProfile
+@{
+    ViewBag.Title = "ProfileChange";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Profil Ayarı</h2>
+@if (ViewBag.show == true)
+{
+    <div id="alertBox" class="alert alert-primary">
+        Tebrikler Değişiklik Sağlandı
+    </div>
+}
+
+<script>
+    // Belirli bir süre sonra alertBox'ı gizleyen ve yeniden görünür hale getiren fonksiyon
+    setTimeout(function() {
+        var alertBox = document.getElementById('alertBox');
+        alertBox.style.display = 'none';
+    }, 3000); // 5 saniye (5000 milisaniye) sonra gizle
+</script>
+
+<div class="row">
+    <div class="col-12">
+        @using (Html.BeginForm("ProfileChange", "Profile", FormMethod.Post))
+        {
+            <label> ID</label>
+            @Html.TextBoxFor(x => x.ProfileID, new { @readonly = "readonly", @class = "form form-control" })
+            <br />
+            <label>Ünvan</label>
+            @Html.TextBoxFor(x => x.Title, new { @class = "form form-control" })
+            <br />
+            <label>İsim Soyisim</label>
+            @Html.TextBoxFor(x => x.NameSurname, new { @class = "form form-control" })
+            <br />
+            <label>Mail Adresi</label>
+            @Html.TextBoxFor(x => x.Email, new { @class = "form form-control" })
+            <br />
+            <label>Telefon Numarası</label>
+            @Html.TextBoxFor(x => x.Phone, new { @class = "form form-control" })
+            <br />
+            <button class="btn btn-success">Değiştir</button>
+        }
+
+    </div>
+</div>

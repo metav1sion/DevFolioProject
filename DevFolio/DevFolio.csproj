@@ -514,11 +514,13 @@
     <Content Include="Views\Category\CreateCategory.cshtml" />
     <Content Include="Views\Contact\MessageList.cshtml" />
     <Content Include="Views\Contact\ReadMessage.cshtml" />
+    <Content Include="Views\Service\CreateService.cshtml" />
+    <Content Include="Views\Service\UpdateService.cshtml" />
+    <Content Include="Views\Profile\ProfileChange.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Adress\" />
-    <Folder Include="Views\Profile\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

@@ -92,6 +92,7 @@ namespace DevFolio.Controllers
 		[HttpGet]
 		public PartialViewResult PartialContact()
 		{
+			ViewBag.show = false;
 			return PartialView();
 		}
 		[HttpPost]
@@ -101,10 +102,9 @@ namespace DevFolio.Controllers
 			p.SendMessageDate = DateTime.Now;
 			db.TblContact.Add(p);
 			db.SaveChanges();
-
 			ModelState.Clear();
-
-			return PartialView();
+			ViewBag.show = true;
+			return PartialView("PartialContact");
 		}
 
 	}
