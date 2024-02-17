@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "ChartList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<!DOCTYPE html>
+<link href="~/Templates/adminkit-main/static/css/app.css" rel="stylesheet">
+<html lang="en">
+
+    @Html.Action("ChartHead", "Chart")
+
+<body>
+    @Html.Action("AllChart","Chart")
+
+
+    @Html.Action("ChartJS","Chart")
+
+</body>
+
+</html>
+

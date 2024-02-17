@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,7 +17,7 @@ namespace DevFolio.Controllers
 		public ActionResult MessageList()
         {
 	        var values = db.TblContact.ToList();
-            return View(values);
+			return View(values);
         }
 
 

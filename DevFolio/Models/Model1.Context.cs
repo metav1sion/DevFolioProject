@@ -45,5 +45,40 @@ namespace DevFolio.Models
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("LastSkillTitle");
         }
+    
+        public virtual ObjectResult<GetReadStatusCounts_Result> GetReadStatusCounts()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetReadStatusCounts_Result>("GetReadStatusCounts");
+        }
+    
+        public virtual int GetTrueReadStatusCount()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GetTrueReadStatusCount");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> GetFalseReadStatusCount()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetFalseReadStatusCount");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> GetTrueReadStatusCount1()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetTrueReadStatusCount1");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> TrueCount()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("TrueCount");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> FalseCount()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("FalseCount");
+        }
+    
+        public virtual ObjectResult<MessageLastTenDays_Result> MessageLastTenDays()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MessageLastTenDays_Result>("MessageLastTenDays");
+        }
     }
 }

@@ -6,12 +6,14 @@
 
 <h2>Referans Oluşturma</h2>
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     <label>Referans Adı</label>
     @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
     <br />
-    <label>Resim Yolu</label>
-    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <div class="mb-3">
+        <label>Resim</label>
+        <input class="form-control" type="file" name="file" id="formFileMultiple">
+    </div>
     <br />
     <label>Açıklama</label>
     @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })

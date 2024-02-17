@@ -122,7 +122,7 @@
           </Key>
           <Property Name="TestimonialID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameSurname" Type="varchar" MaxLength="50" />
-          <Property Name="Description" Type="varchar" MaxLength="20" />
+          <Property Name="Description" Type="varchar" MaxLength="100" />
           <Property Name="ImageUrl" Type="varchar" MaxLength="350" />
           <Property Name="Status" Type="bit" />
         </EntityType>
@@ -138,7 +138,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="FalseCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetFalseReadStatusCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetTrueReadStatusCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="LastSkillTitle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="MessageLastTenDays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TrueCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DbDevFolioModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblAbout" EntityType="Self.TblAbout" Schema="dbo" store:Type="Tables" />
@@ -281,7 +286,7 @@
           </Key>
           <Property Name="TestimonialID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Description" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="ImageUrl" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
           <Property Name="Status" Type="Boolean" />
         </EntityType>
@@ -316,7 +321,22 @@
             <End Role="TblProject" EntitySet="TblProject" />
           </AssociationSet>
           <FunctionImport Name="LastSkillTitle" ReturnType="Collection(String)" />
+          <FunctionImport Name="GetReadStatusCounts" ReturnType="Collection(DbDevFolioModel.GetReadStatusCounts_Result)" />
+          <FunctionImport Name="GetTrueReadStatusCount" />
+          <FunctionImport Name="GetFalseReadStatusCount" ReturnType="Collection(Int32)" />
+          <FunctionImport Name="GetTrueReadStatusCount1" ReturnType="Collection(Int32)" />
+          <FunctionImport Name="TrueCount" ReturnType="Collection(Int32)" />
+          <FunctionImport Name="FalseCount" ReturnType="Collection(Int32)" />
+          <FunctionImport Name="MessageLastTenDays" ReturnType="Collection(DbDevFolioModel.MessageLastTenDays_Result)" />
         </EntityContainer>
+        <ComplexType Name="GetReadStatusCounts_Result">
+          <Property Type="Int32" Name="TrueCount" Nullable="true" />
+          <Property Type="Int32" Name="FalseCount" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="MessageLastTenDays_Result">
+          <Property Type="DateTime" Name="SendMessageDate" Nullable="true" />
+          <Property Type="Int32" Name="MessageCount" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -458,7 +478,19 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="LastSkillTitle" FunctionName="DbDevFolioModel.Store.LastSkillTitle" />
-        </EntityContainerMapping>
+          <FunctionImportMapping FunctionImportName="GetFalseReadStatusCount" FunctionName="DbDevFolioModel.Store.GetFalseReadStatusCount" />
+          <FunctionImportMapping FunctionImportName="GetTrueReadStatusCount1" FunctionName="DbDevFolioModel.Store.GetTrueReadStatusCount" />
+          <FunctionImportMapping FunctionImportName="TrueCount" FunctionName="DbDevFolioModel.Store.TrueCount" />
+          <FunctionImportMapping FunctionImportName="FalseCount" FunctionName="DbDevFolioModel.Store.FalseCount" />
+          <FunctionImportMapping FunctionImportName="MessageLastTenDays" FunctionName="DbDevFolioModel.Store.MessageLastTenDays">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DbDevFolioModel.MessageLastTenDays_Result">
+                <ScalarProperty Name="SendMessageDate" ColumnName="SendMessageDate" />
+                <ScalarProperty Name="MessageCount" ColumnName="MessageCount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

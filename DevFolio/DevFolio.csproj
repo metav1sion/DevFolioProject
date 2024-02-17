@@ -133,6 +133,7 @@
     <Compile Include="Controllers\AdminLayoutController.cs" />
     <Compile Include="Controllers\AdressController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\FeatureController.cs" />
@@ -146,6 +147,12 @@
     <Compile Include="Controllers\TestimonialController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetReadStatusCounts_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MessageLastTenDays_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -258,6 +265,52 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Templates\adminkit-main\.gitignore" />
+    <Content Include="Templates\adminkit-main\postcss.config.js" />
+    <Content Include="Templates\adminkit-main\src\img\avatars\avatar-2.jpg" />
+    <Content Include="Templates\adminkit-main\src\img\avatars\avatar-3.jpg" />
+    <Content Include="Templates\adminkit-main\src\img\avatars\avatar-4.jpg" />
+    <Content Include="Templates\adminkit-main\src\img\avatars\avatar-5.jpg" />
+    <Content Include="Templates\adminkit-main\src\img\avatars\avatar.jpg" />
+    <Content Include="Templates\adminkit-main\src\img\icons\icon-48x48.png" />
+    <Content Include="Templates\adminkit-main\src\img\photos\unsplash-1.jpg" />
+    <Content Include="Templates\adminkit-main\src\img\photos\unsplash-2.jpg" />
+    <Content Include="Templates\adminkit-main\src\img\photos\unsplash-3.jpg" />
+    <Content Include="Templates\adminkit-main\src\js\app.js" />
+    <Content Include="Templates\adminkit-main\src\js\modules\bootstrap.js" />
+    <Content Include="Templates\adminkit-main\src\js\modules\chartjs.js" />
+    <Content Include="Templates\adminkit-main\src\js\modules\feather.js" />
+    <Content Include="Templates\adminkit-main\src\js\modules\flatpickr.js" />
+    <Content Include="Templates\adminkit-main\src\js\modules\sidebar.js" />
+    <Content Include="Templates\adminkit-main\src\js\modules\theme.js" />
+    <Content Include="Templates\adminkit-main\src\js\modules\vector-maps.js" />
+    <Content Include="Templates\adminkit-main\src\js\modules\vector-maps\world.js" />
+    <Content Include="Templates\adminkit-main\static\charts-chartjs.html" />
+    <Content Include="Templates\adminkit-main\static\css\app.css" />
+    <Content Include="Templates\adminkit-main\static\icons-feather.html" />
+    <Content Include="Templates\adminkit-main\static\img\avatars\avatar-2.jpg" />
+    <Content Include="Templates\adminkit-main\static\img\avatars\avatar-3.jpg" />
+    <Content Include="Templates\adminkit-main\static\img\avatars\avatar-4.jpg" />
+    <Content Include="Templates\adminkit-main\static\img\avatars\avatar-5.jpg" />
+    <Content Include="Templates\adminkit-main\static\img\avatars\avatar.jpg" />
+    <Content Include="Templates\adminkit-main\static\img\icons\icon-48x48.png" />
+    <Content Include="Templates\adminkit-main\static\img\photos\unsplash-1.jpg" />
+    <Content Include="Templates\adminkit-main\static\img\photos\unsplash-2.jpg" />
+    <Content Include="Templates\adminkit-main\static\img\photos\unsplash-3.jpg" />
+    <Content Include="Templates\adminkit-main\static\index.html" />
+    <Content Include="Templates\adminkit-main\static\js\app.js" />
+    <Content Include="Templates\adminkit-main\static\js\app.js.LICENSE.txt" />
+    <Content Include="Templates\adminkit-main\static\maps-google.html" />
+    <Content Include="Templates\adminkit-main\static\pages-blank.html" />
+    <Content Include="Templates\adminkit-main\static\pages-profile.html" />
+    <Content Include="Templates\adminkit-main\static\pages-sign-in.html" />
+    <Content Include="Templates\adminkit-main\static\pages-sign-up.html" />
+    <Content Include="Templates\adminkit-main\static\ui-buttons.html" />
+    <Content Include="Templates\adminkit-main\static\ui-cards.html" />
+    <Content Include="Templates\adminkit-main\static\ui-forms.html" />
+    <Content Include="Templates\adminkit-main\static\ui-typography.html" />
+    <Content Include="Templates\adminkit-main\static\upgrade-to-pro.html" />
+    <Content Include="Templates\adminkit-main\webpack.config.js" />
     <Content Include="Templates\devfolio-master\blog-single.html" />
     <Content Include="Templates\devfolio-master\contactform\contactform.js" />
     <Content Include="Templates\devfolio-master\contactform\Readme.txt" />
@@ -517,6 +570,53 @@
     <Content Include="Views\Service\CreateService.cshtml" />
     <Content Include="Views\Service\UpdateService.cshtml" />
     <Content Include="Views\Profile\ProfileChange.cshtml" />
+    <Content Include="Templates\adminkit-main\.babelrc" />
+    <Content Include="Templates\adminkit-main\.eslintrc" />
+    <Content Include="Templates\adminkit-main\.github\CODE_OF_CONDUCT.md" />
+    <Content Include="Templates\adminkit-main\.github\CONTRIBUTING.md" />
+    <Content Include="Templates\adminkit-main\.github\FUNDING.yml" />
+    <Content Include="Templates\adminkit-main\.github\ISSUE_TEMPLATE\bug_report.md" />
+    <Content Include="Templates\adminkit-main\.github\ISSUE_TEMPLATE\config.yml" />
+    <Content Include="Templates\adminkit-main\.github\ISSUE_TEMPLATE\feature_request.md" />
+    <Content Include="Templates\adminkit-main\.github\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="Templates\adminkit-main\.nvmrc" />
+    <Content Include="Templates\adminkit-main\CHANGELOG.md" />
+    <Content Include="Templates\adminkit-main\LICENSE" />
+    <Content Include="Templates\adminkit-main\package.json" />
+    <Content Include="Templates\adminkit-main\README.md" />
+    <Content Include="Templates\adminkit-main\src\fonts\.gitkeep" />
+    <Content Include="Templates\adminkit-main\src\scss\1-variables\_app.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\2-mixins\_button.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\3-components\_avatar.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\3-components\_buttons.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\3-components\_card.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\3-components\_chart.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\3-components\_content.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\3-components\_dropdown.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\3-components\_feather.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\3-components\_footer.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\3-components\_hamburger.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\3-components\_list-group.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\3-components\_main.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\3-components\_navbar.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\3-components\_reboot.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\3-components\_sidebar.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\3-components\_sizing.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\3-components\_stat.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\3-components\_tables.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\3-components\_type.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\3-components\_wrapper.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\4-utilities\_cursors.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\5-vendor\_flatpickr.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\5-vendor\_simplebar.scss" />
+    <Content Include="Templates\adminkit-main\src\scss\app.scss" />
+    <Content Include="Templates\adminkit-main\static\css\app.css.map" />
+    <Content Include="Templates\adminkit-main\static\fonts\.gitkeep" />
+    <Content Include="Templates\adminkit-main\static\js\app.js.map" />
+    <Content Include="Views\Chart\ChartList.cshtml" />
+    <Content Include="Views\Chart\ChartHead.cshtml" />
+    <Content Include="Views\Chart\ChartJS.cshtml" />
+    <Content Include="Views\Chart\AllChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

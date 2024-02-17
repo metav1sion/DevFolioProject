@@ -89,7 +89,6 @@ namespace DevFolio.Controllers
 				value.CoverImageUrl = "/img/" + fileName;
 				//project.CoverImageUrl = path;
 			}
-
 			db.SaveChanges();
 			
 
