@@ -233,6 +233,18 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\projectPhotos\localhost_44316_About_AboutList.png" />
+    <Content Include="img\projectPhotos\localhost_44316_Chart_ChartList.png" />
+    <Content Include="img\projectPhotos\localhost_44316_Contact_MessageList_.png" />
+    <Content Include="img\projectPhotos\localhost_44316_Default_Index %281%29.png" />
+    <Content Include="img\projectPhotos\localhost_44316_Default_Index %282%29.png" />
+    <Content Include="img\projectPhotos\localhost_44316_Default_Index %283%29.png" />
+    <Content Include="img\projectPhotos\localhost_44316_Default_Index.png" />
+    <Content Include="img\projectPhotos\localhost_44316_Login_Index__ReturnUrl=%252fAbout%252fAboutList.png" />
+    <Content Include="img\projectPhotos\localhost_44316_Project_CreateProject_.png" />
+    <Content Include="img\projectPhotos\localhost_44316_Project_Index_.png" />
+    <Content Include="img\projectPhotos\localhost_44316_Testimonial_TestimonialList.png" />
+    <Content Include="img\projectPhotos\localhost_44316_Testimonial_UpdateTestimonial_10.png" />
     <Content Include="img\web.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
