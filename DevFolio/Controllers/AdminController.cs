@@ -11,6 +11,7 @@ namespace DevFolio.Controllers
     {
 	    private DbDevFolioEntities db = new DbDevFolioEntities();
         // GET: Admin
+        
         public ActionResult AdminList()
         {
 	        var values = db.TblAdmin.ToList();

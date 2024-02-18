@@ -11,8 +11,9 @@ namespace DevFolio.Controllers
     {
 	    private DbDevFolioEntities db = new DbDevFolioEntities();
 
-        // GET: About
-        public ActionResult AboutList()
+		// GET: About
+		[Authorize]
+		public ActionResult AboutList()
         {
 	        var values = db.TblAbout.ToList();
             return View(values);

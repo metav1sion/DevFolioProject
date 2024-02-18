@@ -10,49 +10,55 @@ namespace DevFolio.Controllers
     public class DefaultController : Controller
     {
 	    private DbDevFolioEntities db = new DbDevFolioEntities();
-        // GET: Default
-        public ActionResult Index()
+		// GET: Default
+
+		[AllowAnonymous]
+		public ActionResult Index()
         {
             return View();
         }
-
-        public PartialViewResult PartialHead()
+        [AllowAnonymous]
+		public PartialViewResult PartialHead()
         {
 			return PartialView();
 		}
-        public PartialViewResult PartialNavbar()
+		[AllowAnonymous]
+		public PartialViewResult PartialNavbar()
         {
 	        return PartialView();
         }
-        public PartialViewResult PartialFeature()
+        [AllowAnonymous]
+		public PartialViewResult PartialFeature()
         {
 	        var values = db.TblFeature.ToList();
 	        return PartialView(values);
         }
-        public PartialViewResult PartialProfile()
+        [AllowAnonymous]
+		public PartialViewResult PartialProfile()
         {
 	        var values = db.TblProfile.ToList();
 	        return PartialView(values);
         }
-        public PartialViewResult PartialSkill()
+        [AllowAnonymous]
+		public PartialViewResult PartialSkill()
         {
 	        var values = db.TblSkill.ToList();
 	        return PartialView(values);
         }
-
-        public PartialViewResult PartialAboutMe()
+        [AllowAnonymous]
+		public PartialViewResult PartialAboutMe()
         {
             var values = db.TblAbout.ToList();
             return PartialView(values);
         }
-
-        public PartialViewResult PartialService()
+        [AllowAnonymous]
+		public PartialViewResult PartialService()
         {
 	        var values = db.TblService.ToList();
             return PartialView(values);
         }
-
-        public PartialViewResult PartialStatistic()
+        [AllowAnonymous]
+		public PartialViewResult PartialStatistic()
         {
 			ViewBag.categoryCount = db.TblCategory.Count();
 			ViewBag.projectCount = db.TblProject.Count();
@@ -64,37 +70,38 @@ namespace DevFolio.Controllers
 
 			return PartialView();
         }
-
+        [AllowAnonymous]
 		public PartialViewResult PartialPortfolio()
 		{
 			var values = db.TblProject.ToList();
 			return PartialView(values);
 		}
-
+		[AllowAnonymous]
 		public PartialViewResult PartialTestimonial()
 		{
 			var values = db.TblTestimonial.ToList();
             return PartialView(values);
 		}
-
+		[AllowAnonymous]
 		public PartialViewResult PartialAdress()
 		{
             var values = db.TblAdress.ToList();
             return PartialView(values);
 		}
-
+		[AllowAnonymous]
 		public PartialViewResult PartialSocial()
 		{
 			var values = db.TblSocialMedia.ToList();
 			return PartialView(values);
 		}
-
+		[AllowAnonymous]
 		[HttpGet]
 		public PartialViewResult PartialContact()
 		{
 			ViewBag.show = false;
 			return PartialView();
 		}
+		[AllowAnonymous]
 		[HttpPost]
 		public PartialViewResult PartialContact(TblContact p)
 		{

@@ -10,8 +10,9 @@ namespace DevFolio.Controllers
     public class ChartController : Controller
     {
 	    private DbDevFolioEntities db = new DbDevFolioEntities();
-        // GET: Chart
-        public ActionResult ChartList()
+		// GET: Chart
+		[Authorize]
+		public ActionResult ChartList()
         {
             return View();
         }

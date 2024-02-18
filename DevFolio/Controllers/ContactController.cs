@@ -13,7 +13,7 @@ namespace DevFolio.Controllers
         // GET: Contact
         private DbDevFolioEntities db = new DbDevFolioEntities();
 
-        
+        [Authorize]
 		public ActionResult MessageList()
         {
 	        var values = db.TblContact.ToList();
@@ -27,6 +27,14 @@ namespace DevFolio.Controllers
             value.IsRead = true;
             db.SaveChanges();
             return View(value);
+        }
+
+        public ActionResult DeleteMessage(int id)
+        {
+            var value = db.TblContact.FirstOrDefault(y=>y.ContactID==id);
+            db.TblContact.Remove(value);
+            db.SaveChanges();
+            return RedirectToAction("MessageList");
         }
     }
 }
