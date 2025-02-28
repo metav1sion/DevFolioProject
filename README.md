@@ -32,8 +32,6 @@ Hızlı bir şekilde admin paneli entegre edilerek bir CV sitesi oluşturulan bu
 ### Referanslar Sayfası
 ![Referanslar Sayfası](https://github.com/metav1sion/DevFolioProject/blob/master/DevFolio/img/projectPhotos/localhost_44316_Testimonial_TestimonialList.png)
 
-### Referans Güncelleme Sayfası
-![Referans Güncelleme Sayfası](https://github.com/metav1sion/DevFolioProject/blob/master/DevFolio/img/projectPhotos/localhost_44316_Testimonial_UpdateTestimonial_10.png)
 
 ### Proje Oluşturma Sayfası
 ![Proje Oluşturma Sayfası](https://github.com/metav1sion/DevFolioProject/blob/master/DevFolio/img/projectPhotos/localhost_44316_Project_CreateProject_.png)
